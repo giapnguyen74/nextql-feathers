@@ -90,6 +90,63 @@ await app.service("messages").patch(
 	);
 ```
 
+# Sample
+Please check out featherjs-chat example with NextQL.
+* NextQL could real-time over Featherjs socket.io
+* Featherjs methods called with NextQL query. So you can query user information directly from messages service. Orginial version require you query addtional user service.
+```js
+client
+		.service("messages")
+		.find({
+			query: {
+				$params: {
+					$sort: { createdAt: -1 },
+					$limit: 25
+				},
+				total: 1,
+				limit: 1,
+				skip: 1,
+				data: {
+					text: 1,
+					owner: {
+						name: 1
+					}
+				}
+			}
+		})
+		.then(page => {
+			page.data.reverse().forEach(addMessage);
+		});
+```
+
+* When you call create message, you provide NextQL query which filter data from Featherjs event - **it's work like GraphQL subscription or Relay Fat Query without coding**.
+```js
+client
+		.service("messages")
+		.create(
+			{
+				text: input.value
+			},
+			{
+				query: {
+					text: 1,
+					owner: {
+						name: 1
+					}
+				}
+			}
+		)
+		.then(() => {
+			input.value = "";
+		});
+```
+
+* Thus event listenning from all clients will receive above NextQL query data.
+```js
+// Listen to created events and add the new message in real-time
+client.service("messages").on("created", addMessage);
+```
+
 
 # Testing
  PASS  test/index.test.js

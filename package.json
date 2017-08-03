@@ -4,14 +4,9 @@
 	"description": "nextql plugin for feathers",
 	"homepage": "",
 	"author": "“Giap <“sorite2003@gmail.com”> (“https://www.linkedin.com/in/giapnh”)",
-	"files": [
-		"lib"
-	],
+	"files": ["lib"],
 	"main": "index.js",
-	"keywords": [
-		"nextql",
-		"feathers"
-	],
+	"keywords": ["nextql", "feathers"],
 	"devDependencies": {
 		"babel-cli": "^6.24.1",
 		"babel-jest": "^20.0.3",
@@ -35,8 +30,7 @@
 	"scripts": {
 		"test": "jest --coverage",
 		"compile": "babel -d lib/ src/",
-		"prepublish": "nsp check && npm run compile",
-		"pretest": "eslint . --fix"
+		"prepublish": "nsp check && npm run compile"
 	},
 	"license": "MIT",
 	"repository": "giapnguyen74@gmail.com/nextql-feathers",
