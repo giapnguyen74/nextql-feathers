@@ -24,7 +24,7 @@ class Service {
 					(result &&
 						result[this.name] &&
 						result[this.name][method]) ||
-					{}
+					null
 			);
 	}
 
@@ -67,14 +67,27 @@ class Service {
 function inject_feather_methods(name, options, service) {
 	const handleResult = result => {
 		return Array.isArray(result)
-			? result.map(obj =>
-					Object.assign(obj, {
+			? result.map(item =>
+					Object.assign(item, {
 						_type: name
 					})
 				)
 			: Object.assign(result, {
 					_type: name
 				});
+	};
+
+	const handleFindResult = result => {
+		if (Array.isArray(result)) {
+			return handleResult(result);
+		} else if (Array.isArray(result.data)) {
+			result.data = result.data.map(item =>
+				Object.assign(item, {
+					_type: name
+				})
+			);
+		}
+		return result;
 	};
 	options.methods = Object.assign(
 		{
@@ -83,7 +96,7 @@ function inject_feather_methods(name, options, service) {
 					.find({
 						query: ctx.query.$params
 					})
-					.then(handleResult);
+					.then(handleFindResult);
 			},
 
 			get(params, ctx) {

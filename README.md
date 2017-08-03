@@ -2,7 +2,7 @@
 NextQL plugin for feathers. I  not sure it for production, but it demonstrate how easy to extend NextQL 
 
 * [NextQL](https://github.com/giapnguyen74/nextql) : Yet Another Data Query Language. Equivalent GraphQL but much more simple.
-* [Featherjs](https://github.com/feathersjs/feathers) : A REST and realtime API layer for modern applications.
+* [Featherjs](https://github.com/feathersjs/feathers) : A REST and realtime API layer for modern applications. 
 
 # Why ?
 NextQL just a data query engine. It required a client-side component, a transport and a data access component to complete. Featherjs just happen provide all of features. So shall we marry? 
@@ -93,17 +93,28 @@ await app.service("messages").patch(
 
 # Testing
  PASS  test/index.test.js
+
   ✓ find messages (8ms)
+ 
   ✓ get message (5ms)
+ 
   ✓ create message (2ms)
+ 
   ✓ update message (5ms)
+ 
   ✓ patch message (2ms)
+ 
   ✓ remove message (3ms)
 
+
 Test Suites: 1 passed, 1 total
+
 Tests:       6 passed, 6 total
+
 Snapshots:   0 total
+
 Time:        0.908s, estimated 2s
+
 Ran all test suites.
 
 
