@@ -1,14 +1,14 @@
 # nextql-feathers
 NextQL plugin for feathers. I  not sure it for production, but it demonstrate how easy to extend NextQL 
 
-* [NextQL](https://github.com/giapnguyen74/nextql)
-* [Featherjs](https://github.com/feathersjs/feathers)
+* [NextQL](https://github.com/giapnguyen74/nextql) : Yet Another Data Query Language. Equivalent GraphQL but much more simple.
+* [Featherjs](https://github.com/feathersjs/feathers) : A REST and realtime API layer for modern applications.
 
 # Why ?
 NextQL just a data query engine. It required a client-side component, a transport and a data access component to complete. Featherjs just happen provide all of features. So shall we marry? 
 
 In fact, NextQL match perfect with Feathers:
-* NextQL use JS object as model, Feathers use JS as service.
+* NextQL use JS object as model, Feathers use JS object as service.
 * NextQL's methods could map to Feathers methods.
 * Finally, NextQL will complete Feathers with robust data/relationship query language.
 
