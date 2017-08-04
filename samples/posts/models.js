@@ -31,7 +31,7 @@ module.exports = {
 		computed: {
 			posts(user){
 				return Posts.find({
-					query: { poster: user._id }
+					query: { posterId: user._id }
 				});
 			}
 		}

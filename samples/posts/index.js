@@ -1,6 +1,6 @@
 const feathers = require("feathers");
 const app = feathers();
-const NextQL = require("../../../nextql");
+const NextQL = require("../../../nextql/src");
 const nextql = new NextQL();
 const models = require("./models");
 nextql.use(require("../../src"), { app: app });
@@ -22,7 +22,10 @@ async function test(){
             _id: 1,
             message: 1,
             poster: {
-                name: 1
+                name: 1,
+                posts: {
+                    message: 1
+                }
             },
             readers: {
                 name: 1
