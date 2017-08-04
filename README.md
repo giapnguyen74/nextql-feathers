@@ -149,33 +149,24 @@ client.service("messages").on("created", addMessage);
 
 
 # Testing
+```
  PASS  test/index.test.js
-
   ✓ find messages (8ms)
- 
   ✓ get message (5ms)
- 
   ✓ create message (2ms)
- 
   ✓ update message (5ms)
- 
-  ✓ patch message (2ms)
- 
+  ✓ patch message (2ms) 
   ✓ remove message (3ms)
 
-
 Test Suites: 1 passed, 1 total
-
 Tests:       6 passed, 6 total
-
 Snapshots:   0 total
-
 Time:        0.908s, estimated 2s
-
 Ran all test suites.
-
 
 File      |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
 ----------|----------|----------|----------|----------|----------------|
 All files |    97.92 |    89.29 |      100 |    97.87 |                |
  index.js |    97.92 |    89.29 |      100 |    97.87 |            121 |
+
+```

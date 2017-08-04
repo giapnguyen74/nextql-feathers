@@ -1,41 +1,46 @@
 {
-	"name": "nextql-feathers",
-	"version": "0.0.1",
-	"description": "nextql plugin for feathers",
-	"homepage": "",
-	"author": "“Giap <“sorite2003@gmail.com”> (“https://www.linkedin.com/in/giapnh”)",
-	"files": ["lib"],
-	"main": "index.js",
-	"keywords": ["nextql", "feathers"],
-	"devDependencies": {
-		"babel-cli": "^6.24.1",
-		"babel-jest": "^20.0.3",
-		"babel-preset-env": "^1.6.0",
-		"body-parser": "^1.17.2",
-		"eslint": "^4.1.0",
-		"eslint-config-xo-space": "^0.16.0",
-		"featherjs": "^0.1.0",
-		"feathers": "^2.1.7",
-		"feathers-authentication": "^1.2.7",
-		"feathers-authentication-jwt": "^0.3.2",
-		"feathers-authentication-local": "^0.4.3",
-		"feathers-nedb": "^2.6.2",
-		"feathers-rest": "^1.8.0",
-		"feathers-socketio": "^2.0.0",
-		"jest": "^19.0.2",
-		"jest-cli": "^20.0.0",
-		"nedb": "^1.8.0",
-		"nsp": "^2.6.3"
-	},
-	"scripts": {
-		"test": "jest --coverage",
-		"compile": "babel -d lib/ src/",
-		"prepublish": "nsp check && npm run compile"
-	},
-	"license": "MIT",
-	"repository": "giapnguyen74@gmail.com/nextql-feathers",
-	"jest": {
-		"testEnvironment": "node"
-	},
-	"dependencies": {}
+  "name": "nextql-feathers",
+  "version": "0.0.1",
+  "description": "nextql plugin for feathers",
+  "homepage": "",
+  "author": "“Giap <“sorite2003@gmail.com”> (“https://www.linkedin.com/in/giapnh”)",
+  "files": [
+    "lib"
+  ],
+  "main": "index.js",
+  "keywords": [
+    "nextql",
+    "feathers"
+  ],
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-jest": "^20.0.3",
+    "babel-preset-env": "^1.6.0",
+    "body-parser": "^1.17.2",
+    "eslint": "^4.1.0",
+    "eslint-config-xo-space": "^0.16.0",
+    "featherjs": "^0.1.0",
+    "feathers": "^2.1.7",
+    "feathers-authentication": "^1.2.7",
+    "feathers-authentication-jwt": "^0.3.2",
+    "feathers-authentication-local": "^0.4.3",
+    "feathers-nedb": "^2.6.2",
+    "feathers-rest": "^1.8.0",
+    "feathers-socketio": "^2.0.0",
+    "jest": "^20.0.4",
+    "jest-cli": "^20.0.0",
+    "nedb": "^1.8.0",
+    "nsp": "^2.6.3"
+  },
+  "scripts": {
+    "test": "jest --coverage",
+    "compile": "babel -d lib/ src/",
+    "prepublish": "nsp check && npm run compile"
+  },
+  "license": "MIT",
+  "repository": "giapnguyen74@gmail.com/nextql-feathers",
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "dependencies": {}
 }
