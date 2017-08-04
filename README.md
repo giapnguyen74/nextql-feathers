@@ -94,7 +94,7 @@ await app.service("messages").patch(
 	);
 ```
 
-# Sample
+# Features
 Please check out [featherjs-chat](https://github.com/giapnguyen74/nextql-feathers/tree/master/samples/chat) example with NextQL.
 * NextQL could real-time over Featherjs socket.io
 * Featherjs methods called with NextQL query. So you can query user information directly from messages service. Orginial version require you query addtional user service.
