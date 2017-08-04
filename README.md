@@ -13,8 +13,8 @@ In fact, NextQL match perfect with Feathers:
 * Finally, NextQL will complete Feathers with robust data/relationship query language.
 
 # Sample
-* [Nested services] (https://github.com/giapnguyen74/nextql-feathers/tree/master/samples/posts)
-* [Featherjs chat] (https://github.com/giapnguyen74/nextql-feathers/tree/master/samples/chat)
+* [Nested services](https://github.com/giapnguyen74/nextql-feathers/tree/master/samples/posts)
+* [Featherjs chat](https://github.com/giapnguyen74/nextql-feathers/tree/master/samples/chat)
 
 # nextql + feathers = Awesome!
 
