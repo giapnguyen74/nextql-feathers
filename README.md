@@ -7,7 +7,7 @@ NextQL plugin for feathers. I  not sure it for production, but it demonstrate ho
 * [Featherjs](https://github.com/feathersjs/feathers) : A REST and realtime API layer for modern applications. 
 # Install
 ```sh
-npm install --save nextql-validate
+npm install --save nextql-feathers
 ```
 
 # Why ?
