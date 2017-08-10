@@ -65,62 +65,51 @@ class Service {
 }
 
 function inject_feather_methods(name, options, service) {
-	const handleResult = result => {
-		return Array.isArray(result)
-			? result.map(item =>
-					Object.assign(item, {
-						_type: name
-					})
-				)
-			: Object.assign(result, {
-					_type: name
-				});
-	};
-
-	const handleFindResult = result => {
-		if (Array.isArray(result)) {
-			return handleResult(result);
-		} else if (Array.isArray(result.data)) {
-			result.data = result.data.map(item =>
-				Object.assign(item, {
-					_type: name
-				})
-			);
+	options.returns = {
+		get: name,
+		create: name,
+		update: name,
+		patch: name,
+		remove: name,
+		find(source) {
+			if (service.paginate && service.paginate.default) {
+				return {
+					total: 1,
+					limit: 1,
+					skip: 1,
+					data: name
+				};
+			} else {
+				return name;
+			}
 		}
-		return result;
 	};
 	options.methods = Object.assign(
 		{
 			find(params, ctx) {
-				return service
-					.find({
-						query: ctx.query.$params
-					})
-					.then(handleFindResult);
+				return service.find({
+					query: ctx.query.$params
+				});
 			},
 
 			get(params, ctx) {
-				return service.get(params.id, ctx).then(handleResult);
+				return service.get(params.id, ctx);
 			},
 
 			create(params, ctx) {
-				return service.create(params.data, ctx).then(handleResult);
+				return service.create(params.data, ctx);
 			},
 
 			update(params, ctx) {
-				return service
-					.update(params.id, params.data, ctx)
-					.then(handleResult);
+				return service.update(params.id, params.data, ctx);
 			},
 
 			patch(params, ctx) {
-				return service
-					.patch(params.id, params.data, ctx)
-					.then(handleResult);
+				return service.patch(params.id, params.data, ctx);
 			},
 
 			remove(params, ctx) {
-				return service.remove(params.id, ctx).then(handleResult);
+				return service.remove(params.id, ctx);
 			}
 		},
 		options.methods

@@ -2,3 +2,5 @@ node_modules
 coverage
 data
 npm-debug
+lib
+package-lock.json

@@ -23,7 +23,38 @@ nextql.model("messages", {
 	fields: {
 		_id: 1,
 		text: 1,
-		newText: 1
+		newText: 1,
+		owner: {
+			name: 1
+		}
+	},
+	computed: {
+		owner() {
+			return {
+				name: "Giap Nguyen Huu"
+			};
+		}
+	}
+});
+
+nextql.model("pmessages", {
+	feathers: {
+		path: "/pmessages",
+		service: service({
+			Model,
+			paginate: {
+				default: 5,
+				max: 25
+			}
+		})
+	},
+	fields: {
+		_id: 1,
+		text: 1,
+		newText: 1,
+		owner: {
+			name: 1
+		}
 	},
 	computed: {
 		owner() {
@@ -196,4 +227,43 @@ test("remove message", async () => {
 			}
 		})
 		.catch(err => expect(err.message).toBe("No record found for id '3'"));
+});
+
+test("support paginate", async function() {
+	const messages = await app.service("pmessages").find({
+		query: {
+			$params: { $limit: 2 },
+			total: 1,
+			limit: 1,
+			skip: 1,
+			data: {
+				_id: 1,
+				text: 1,
+				owner: {
+					name: 1
+				}
+			}
+		}
+	});
+
+	expect(messages).toMatchObject({
+		limit: 2,
+		skip: 0,
+		data: [
+			{
+				_id: 1,
+				text: "Update text 1",
+				owner: {
+					name: "Giap Nguyen Huu"
+				}
+			},
+			{
+				_id: 2,
+				text: "Text 2",
+				owner: {
+					name: "Giap Nguyen Huu"
+				}
+			}
+		]
+	});
 });

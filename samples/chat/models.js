@@ -39,7 +39,10 @@ module.exports = {
 		fields: {
 			_id: 1,
 			text: 1,
-			newText: 1
+			newText: 1,
+			owner: {
+				name: 1
+			}
 		},
 		computed: {
 			owner() {

@@ -17,7 +17,7 @@
     "babel-jest": "^20.0.3",
     "babel-preset-env": "^1.6.0",
     "body-parser": "^1.17.2",
-    "eslint": "^4.1.0",
+    "eslint": "^4.4.1",
     "eslint-config-xo-space": "^0.16.0",
     "featherjs": "^0.1.0",
     "feathers": "^2.1.7",
