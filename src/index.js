@@ -65,25 +65,28 @@ class Service {
 }
 
 function inject_feather_methods(name, options, service) {
-	options.returns = {
-		get: name,
-		create: name,
-		update: name,
-		patch: name,
-		remove: name,
-		find(source) {
-			if (service.paginate && service.paginate.default) {
-				return {
-					total: 1,
-					limit: 1,
-					skip: 1,
-					data: name
-				};
-			} else {
-				return name;
+	options.returns = Object.assign(
+		{
+			get: name,
+			create: name,
+			update: name,
+			patch: name,
+			remove: name,
+			find() {
+				if (service.paginate && service.paginate.default) {
+					return {
+						total: 1,
+						limit: 1,
+						skip: 1,
+						data: name
+					};
+				} else {
+					return name;
+				}
 			}
-		}
-	};
+		},
+		options.returns
+	);
 	options.methods = Object.assign(
 		{
 			find(params, ctx) {
@@ -122,8 +125,6 @@ module.exports = {
 		if (!app) {
 			throw new Error("Missing feathers app object");
 		}
-
-		nextql.afterResolveType(source => source && source._type);
 
 		nextql.beforeCreate(options => {
 			const name = options.name;
