@@ -6,7 +6,7 @@ NextQL plugin for feathers. I  not sure it for production, but it demonstrate ho
 * [NextQL](https://github.com/giapnguyen74/nextql) : Yet Another Data Query Language. Equivalent GraphQL but much more simple.
 * [Featherjs](https://github.com/feathersjs/feathers) : A REST and realtime API layer for modern applications. 
 
-> Notice: Current nextql-feathers only work with nextql > 5.0.0
+> Notice: Current nextql-feathers only work with nextql >= 5.0.0
 
 # Install
 ```sh
