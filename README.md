@@ -1,6 +1,8 @@
 # nextql-feathers
 NextQL plugin for feathers. I  not sure it for production, but it demonstrate how easy to extend NextQL 
 
+# nextql-limit [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+
 * [NextQL](https://github.com/giapnguyen74/nextql) : Yet Another Data Query Language. Equivalent GraphQL but much more simple.
 * [Featherjs](https://github.com/feathersjs/feathers) : A REST and realtime API layer for modern applications. 
 
@@ -174,3 +176,11 @@ All files |    97.92 |    89.29 |      100 |    97.87 |                |
  index.js |    97.92 |    89.29 |      100 |    97.87 |            121 |
 
 ```
+
+
+[npm-image]: https://badge.fury.io/js/nextql-feath.svg
+[npm-url]: https://npmjs.org/package/nextql-feathers
+[travis-image]: https://travis-ci.org/giapnguyen74/nextql-feathers.svg?branch=master
+[travis-url]: https://travis-ci.org/giapnguyen74/nextql-feathers
+[daviddm-image]: https://david-dm.org/giapnguyen74/nextql-feathers.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/giapnguyen74/nextql-feathers
